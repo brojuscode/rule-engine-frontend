@@ -16,10 +16,13 @@ const App = () => {
   // API call to create a rule
   const createRule = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/create_rule', {
-        rule: rule,
-        rule_id: ruleId,
-      })
+      const response = await axios.post(
+        'https://rule-engine-backend-kappa.vercel.app/create_rule',
+        {
+          rule: rule,
+          rule_id: ruleId,
+        },
+      )
       alert('Rule Created Successfully')
     } catch (error) {
       alert(
@@ -32,11 +35,14 @@ const App = () => {
   // API call to combine rules
   const combineRule = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/combine_rules', {
-        rule_ids: combinedRules.split(',').map((r) => r.trim()),
-        operator: operator,
-        new_rule_id: newRuleId,
-      })
+      const response = await axios.post(
+        'https://rule-engine-backend-kappa.vercel.app/combine_rules',
+        {
+          rule_ids: combinedRules.split(',').map((r) => r.trim()),
+          operator: operator,
+          new_rule_id: newRuleId,
+        },
+      )
 
       setCombinedAst(response.data.ast) // Corrected to access the right response property
       alert('Rules Combined Successfully')
@@ -51,10 +57,13 @@ const App = () => {
   // API call to evaluate rule
   const evaluateRule = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/evaluate_rule', {
-        rule_id: ruleId,
-        data: data,
-      })
+      const response = await axios.post(
+        'https://rule-engine-backend-kappa.vercel.app/evaluate_rule',
+        {
+          rule_id: ruleId,
+          data: data,
+        },
+      )
       setEvaluationResult(response.data.result)
     } catch (error) {
       alert(
