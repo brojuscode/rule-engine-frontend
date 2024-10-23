@@ -34,7 +34,8 @@ h1 {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin-bottom: 40px;
   transition: transform 0.2s ease-in-out;
 }
@@ -118,4 +119,46 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px;
+  }
+
+  .section {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .data-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .result {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
 }
