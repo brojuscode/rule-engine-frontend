@@ -17,7 +17,7 @@ const App = () => {
   const createRule = async () => {
     try {
       const response = await axios.post(
-        'https://rule-engine-backend-kappa.vercel.app/create_rule',
+        'https://rule-engine-backend-one.vercel.app/create_rule',
         {
           rule: rule,
           rule_id: ruleId,
@@ -36,7 +36,7 @@ const App = () => {
   const combineRule = async () => {
     try {
       const response = await axios.post(
-        'https://rule-engine-backend-kappa.vercel.app/combine_rules',
+        'https://rule-engine-backend-one.vercel.app/combine_rules',
         {
           rule_ids: combinedRules.split(',').map((r) => r.trim()),
           operator: operator,
@@ -58,7 +58,7 @@ const App = () => {
   const evaluateRule = async () => {
     try {
       const response = await axios.post(
-        'https://rule-engine-backend-kappa.vercel.app/evaluate_rule',
+        'https://rule-engine-backend-one.vercel.app/evaluate_rule',
         {
           rule_id: ruleId,
           data: data,
